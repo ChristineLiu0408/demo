@@ -1,0 +1,345 @@
+{
+  "grouping_variable": "service_support_tool",
+  "group_order": [
+    "No_Tool",
+    "Knowledge_Base",
+    "Chatbot_Copilot",
+    "Agent_Copilot"
+  ],
+  "outcomes": {
+    "resolution_efficiency": {
+      "method": "welch_anova",
+      "posthoc_method": "games_howell",
+      "descriptives": {
+        "No_Tool": {
+          "n": 50,
+          "mean": 3.9150000000000005,
+          "sd": 0.37412346537866176
+        },
+        "Knowledge_Base": {
+          "n": 50,
+          "mean": 4.3168,
+          "sd": 0.45895818136830063
+        },
+        "Chatbot_Copilot": {
+          "n": 50,
+          "mean": 4.922,
+          "sd": 0.7584382449669659
+        },
+        "Agent_Copilot": {
+          "n": 50,
+          "mean": 5.3938,
+          "sd": 1.0915498997633912
+        }
+      },
+      "omnibus": {
+        "stat_name": "F",
+        "df1": 3.0,
+        "df2": 103.40861849149843,
+        "statistic": 44.523655318167236,
+        "p": 1.4773397601141119e-18,
+        "effect_size_name": "partial_eta_squared",
+        "effect_size": 0.3811141178964338
+      },
+      "pairwise": [
+        {
+          "group_a": "No_Tool",
+          "group_b": "Knowledge_Base",
+          "mean_a": 3.915,
+          "mean_b": 4.3168,
+          "mean_diff": -0.4017999999999997,
+          "se": 0.08373899684040129,
+          "ci_low": null,
+          "ci_high": null,
+          "p_adj": 3.5179421565167956e-05,
+          "significant": true
+        },
+        {
+          "group_a": "No_Tool",
+          "group_b": "Chatbot_Copilot",
+          "mean_a": 3.915,
+          "mean_b": 4.922,
+          "mean_diff": -1.0069999999999997,
+          "se": 0.11959907514487812,
+          "ci_low": null,
+          "ci_high": null,
+          "p_adj": 1.5867751557152587e-11,
+          "significant": true
+        },
+        {
+          "group_a": "No_Tool",
+          "group_b": "Agent_Copilot",
+          "mean_a": 3.915,
+          "mean_b": 5.3938,
+          "mean_diff": -1.4787999999999997,
+          "se": 0.16318391777503122,
+          "ci_low": null,
+          "ci_high": null,
+          "p_adj": 4.423239552409086e-12,
+          "significant": true
+        },
+        {
+          "group_a": "Knowledge_Base",
+          "group_b": "Chatbot_Copilot",
+          "mean_a": 4.3168,
+          "mean_b": 4.922,
+          "mean_diff": -0.6052,
+          "se": 0.1253691496081448,
+          "ci_low": null,
+          "ci_high": null,
+          "p_adj": 3.782858254008925e-05,
+          "significant": true
+        },
+        {
+          "group_a": "Knowledge_Base",
+          "group_b": "Agent_Copilot",
+          "mean_a": 4.3168,
+          "mean_b": 5.3938,
+          "mean_diff": -1.077,
+          "se": 0.16745887829066375,
+          "ci_low": null,
+          "ci_high": null,
+          "p_adj": 9.866603356556425e-08,
+          "significant": true
+        },
+        {
+          "group_a": "Chatbot_Copilot",
+          "group_b": "Agent_Copilot",
+          "mean_a": 4.922,
+          "mean_b": 5.3938,
+          "mean_diff": -0.4718,
+          "se": 0.18797392133495755,
+          "ci_low": null,
+          "ci_high": null,
+          "p_adj": 0.06533476684308759,
+          "significant": false
+        }
+      ],
+      "approved_analysis_path": "welch_anova",
+      "approved_posthoc_method": "games_howell"
+    },
+    "service_confidence": {
+      "method": "welch_anova",
+      "posthoc_method": "games_howell",
+      "descriptives": {
+        "No_Tool": {
+          "n": 50,
+          "mean": 3.8616,
+          "sd": 0.3092476716953252
+        },
+        "Knowledge_Base": {
+          "n": 50,
+          "mean": 4.2982,
+          "sd": 0.4395669947313411
+        },
+        "Chatbot_Copilot": {
+          "n": 50,
+          "mean": 4.6624,
+          "sd": 0.834140300438917
+        },
+        "Agent_Copilot": {
+          "n": 50,
+          "mean": 5.1562,
+          "sd": 0.9073619308023606
+        }
+      },
+      "omnibus": {
+        "stat_name": "F",
+        "df1": 3.0,
+        "df2": 101.3323633514492,
+        "statistic": 42.53785434666462,
+        "p": 7.06861028757462e-18,
+        "effect_size_name": "partial_eta_squared",
+        "effect_size": 0.3381244952787892
+      },
+      "pairwise": [
+        {
+          "group_a": "No_Tool",
+          "group_b": "Knowledge_Base",
+          "mean_a": 3.8615999999999997,
+          "mean_b": 4.2982,
+          "mean_diff": -0.4365999999999999,
+          "se": 0.07600700826978025,
+          "ci_low": null,
+          "ci_high": null,
+          "p_adj": 7.738026183146118e-07,
+          "significant": true
+        },
+        {
+          "group_a": "No_Tool",
+          "group_b": "Chatbot_Copilot",
+          "mean_a": 3.8615999999999997,
+          "mean_b": 4.6624,
+          "mean_diff": -0.8008000000000002,
+          "se": 0.12581130022897832,
+          "ci_low": null,
+          "ci_high": null,
+          "p_adj": 1.564595650815903e-07,
+          "significant": true
+        },
+        {
+          "group_a": "No_Tool",
+          "group_b": "Agent_Copilot",
+          "mean_a": 3.8615999999999997,
+          "mean_b": 5.1562,
+          "mean_diff": -1.2946000000000004,
+          "se": 0.13556841785005588,
+          "ci_low": null,
+          "ci_high": null,
+          "p_adj": 7.015499292606364e-13,
+          "significant": true
+        },
+        {
+          "group_a": "Knowledge_Base",
+          "group_b": "Chatbot_Copilot",
+          "mean_a": 4.2982,
+          "mean_b": 4.6624,
+          "mean_diff": -0.3642000000000003,
+          "se": 0.1333423551369533,
+          "ci_low": null,
+          "ci_high": null,
+          "p_adj": 0.0385755305713642,
+          "significant": true
+        },
+        {
+          "group_a": "Knowledge_Base",
+          "group_b": "Agent_Copilot",
+          "mean_a": 4.2982,
+          "mean_b": 5.1562,
+          "mean_diff": -0.8580000000000005,
+          "se": 0.14258504944954997,
+          "ci_low": null,
+          "ci_high": null,
+          "p_adj": 4.201150284321997e-07,
+          "significant": true
+        },
+        {
+          "group_a": "Chatbot_Copilot",
+          "group_b": "Agent_Copilot",
+          "mean_a": 4.6624,
+          "mean_b": 5.1562,
+          "mean_diff": -0.49380000000000024,
+          "se": 0.17430408568279254,
+          "ci_low": null,
+          "ci_high": null,
+          "p_adj": 0.028221178061826224,
+          "significant": true
+        }
+      ],
+      "approved_analysis_path": "welch_anova",
+      "approved_posthoc_method": "games_howell"
+    },
+    "cognitive_load": {
+      "method": "welch_anova",
+      "posthoc_method": "games_howell",
+      "descriptives": {
+        "No_Tool": {
+          "n": 50,
+          "mean": 5.3074,
+          "sd": 0.3173217642091641
+        },
+        "Knowledge_Base": {
+          "n": 50,
+          "mean": 4.8126,
+          "sd": 0.5265281355739884
+        },
+        "Chatbot_Copilot": {
+          "n": 50,
+          "mean": 4.3494,
+          "sd": 0.8092738241466726
+        },
+        "Agent_Copilot": {
+          "n": 50,
+          "mean": 3.7732,
+          "sd": 1.1706189536710387
+        }
+      },
+      "omnibus": {
+        "stat_name": "F",
+        "df1": 3.0,
+        "df2": 99.6352286862551,
+        "statistic": 45.961951215977436,
+        "p": 9.856179266087618e-19,
+        "effect_size_name": "partial_eta_squared",
+        "effect_size": 0.35315442788647783
+      },
+      "pairwise": [
+        {
+          "group_a": "No_Tool",
+          "group_b": "Knowledge_Base",
+          "mean_a": 5.3074,
+          "mean_b": 4.8126,
+          "mean_diff": 0.4948000000000006,
+          "se": 0.08693963188233969,
+          "ci_low": null,
+          "ci_high": null,
+          "p_adj": 1.1737355065655208e-06,
+          "significant": true
+        },
+        {
+          "group_a": "No_Tool",
+          "group_b": "Chatbot_Copilot",
+          "mean_a": 5.3074,
+          "mean_b": 4.3494,
+          "mean_diff": 0.9580000000000002,
+          "se": 0.12293227602951114,
+          "ci_low": null,
+          "ci_high": null,
+          "p_adj": 4.5893966404975117e-10,
+          "significant": true
+        },
+        {
+          "group_a": "No_Tool",
+          "group_b": "Agent_Copilot",
+          "mean_a": 5.3074,
+          "mean_b": 3.7732,
+          "mean_diff": 1.5342000000000002,
+          "se": 0.1715250323850542,
+          "ci_low": null,
+          "ci_high": null,
+          "p_adj": 1.293920526279635e-11,
+          "significant": true
+        },
+        {
+          "group_a": "Knowledge_Base",
+          "group_b": "Chatbot_Copilot",
+          "mean_a": 4.8126,
+          "mean_b": 4.3494,
+          "mean_diff": 0.4631999999999996,
+          "se": 0.13653981104425186,
+          "ci_low": null,
+          "ci_high": null,
+          "p_adj": 0.005727434912084717,
+          "significant": true
+        },
+        {
+          "group_a": "Knowledge_Base",
+          "group_b": "Agent_Copilot",
+          "mean_a": 4.8126,
+          "mean_b": 3.7732,
+          "mean_diff": 1.0393999999999997,
+          "se": 0.18152578947603554,
+          "ci_low": null,
+          "ci_high": null,
+          "p_adj": 1.504647409222848e-06,
+          "significant": true
+        },
+        {
+          "group_a": "Chatbot_Copilot",
+          "group_b": "Agent_Copilot",
+          "mean_a": 4.3494,
+          "mean_b": 3.7732,
+          "mean_diff": 0.5762,
+          "se": 0.20125967589871838,
+          "ci_low": null,
+          "ci_high": null,
+          "p_adj": 0.026512764448130333,
+          "significant": true
+        }
+      ],
+      "approved_analysis_path": "welch_anova",
+      "approved_posthoc_method": "games_howell"
+    }
+  },
+  "alpha": 0.05
+}

@@ -1,0 +1,61 @@
+project_name: ai-stat-report-workflow-demo
+dataset_path: scenarios/clean_anova_case/data.csv
+analysis:
+  analysis_type: one_way_anova
+  grouping_variable: onboarding_training_format
+  grouping_variable_label_zh: 入职培训形式
+  condition_order:
+  - Reading_Materials
+  - Recorded_Video
+  - Live_Workshop
+  - Mentor_Guided
+  condition_labels_zh:
+    Reading_Materials: 阅读材料
+    Recorded_Video: 录播课程
+    Live_Workshop: 直播工作坊
+    Mentor_Guided: 导师带教
+  outcome_variables:
+  - learning_effectiveness
+  - onboarding_confidence
+  - training_burden
+  outcome_labels_zh:
+    learning_effectiveness: 学习效果
+    onboarding_confidence: 上手信心
+    training_burden: 培训负担感
+  outcome_directions:
+    learning_effectiveness: positive
+    onboarding_confidence: positive
+    training_burden: negative
+reporting:
+  analysis_title: 员工入职培训形式效果评估报告
+  decision_context: 不同入职培训形式是否会影响新员工的学习效果、上手信心和培训负担感
+  baseline_condition: Reading_Materials
+  focal_condition: Mentor_Guided
+  report_context:
+    scenario_label: 入职培训形式评估
+    participant_label: 新员工
+    figure_title: 图 1. 不同入职培训形式的效果
+    overview_sentence: 本次评估比较了{group_labels}在{outcome_list}上的差异，以支持{decision_context}。具体而言，每种入职培训形式均使用
+      synthetic/mock data 构建为独立组。
+    questions:
+    - 不同入职培训形式是否影响学习效果、上手信心和培训负担感？
+    - 哪种入职培训形式对应更理想的新员工上手体验？
+    core_findings:
+    - 第一，不同入职培训形式之间存在清晰差异。
+    - 第二，导师带教整体表现更好，既对应更高的学习效果和上手信心，也对应更低的培训负担感。
+    implication_sentence: 这些结果说明，结构化的人际支持仍然是入职培训体验中的关键资源。示例图见图1。
+    action_recommendations:
+    - 后续可以优先保留导师带教中的高价值环节，并评估其规模化成本。
+    - 如果需要降低培训资源投入，可以把导师带教拆解为标准化材料、录播课程和关键节点辅导的组合方案。
+  alpha: 0.05
+  table_format: compact_letter_mean_table
+  figure_type: combined_raincloud
+  figure_style: color_manuscript_ready
+  figure_show_all_significant_brackets: true
+  word_fonts:
+    east_asian: SimSun
+    latin: Times New Roman
+  output_word_report: true
+human_review:
+  required_before_analysis: true
+  decision_file: scenarios/clean_anova_case/human_review_decision.yaml

@@ -1,0 +1,5 @@
+case_id: diagnostic_only_case
+expected_decision: diagnostic_only
+expected_report: blocked
+synthetic_data_only: true
+business_scenario: 不同培训方案是否影响员工知识掌握、迁移信心和培训疲劳；但当前数据质量是否足以支持正式结论。

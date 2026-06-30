@@ -1,0 +1,61 @@
+project_name: ai-stat-report-workflow-demo
+dataset_path: scenarios/non_significant_case/data.csv
+analysis:
+  analysis_type: one_way_anova
+  grouping_variable: knowledge_search_interface
+  grouping_variable_label_zh: 知识检索界面
+  condition_order:
+  - Standard_Search
+  - Tagged_Knowledge_Base
+  - Guided_Workflow
+  - AI_Summary_Interface
+  condition_labels_zh:
+    Standard_Search: 标准搜索
+    Tagged_Knowledge_Base: 标签知识库
+    Guided_Workflow: 引导式流程
+    AI_Summary_Interface: AI摘要界面
+  outcome_variables:
+  - search_efficiency
+  - decision_confidence
+  - perceived_effort
+  outcome_labels_zh:
+    search_efficiency: 查找效率
+    decision_confidence: 决策信心
+    perceived_effort: 感知费力程度
+  outcome_directions:
+    search_efficiency: positive
+    decision_confidence: positive
+    perceived_effort: negative
+reporting:
+  analysis_title: 知识检索工具试点效果评估报告
+  decision_context: 不同知识检索界面是否能改善员工查找信息的效率、决策信心和费力程度
+  baseline_condition: Standard_Search
+  focal_condition: AI_Summary_Interface
+  report_context:
+    scenario_label: 知识检索工具试点
+    participant_label: 员工
+    figure_title: 图 1. 不同知识检索界面的效果
+    overview_sentence: 本次评估比较了{group_labels}在{outcome_list}上的差异，以支持{decision_context}。该情景用于检验
+      workflow 是否能在非显著结果下保持报告克制。
+    questions:
+    - 不同知识检索界面是否改善查找效率、决策信心和感知费力程度？
+    - 当组间差异不稳定时，workflow 是否避免过度解读？
+    core_findings:
+    - 第一，不同知识检索界面之间没有出现稳定组间差异。
+    - 第二，本轮结果不支持直接判断某一种界面优于其他界面。
+    implication_sentence: 这些结果说明，当前试点更适合继续收集使用过程数据，而不是立即做大规模推广判断。示例图见图1。
+    action_recommendations:
+    - 后续可以扩大样本，并补充真实任务耗时、搜索成功率和用户访谈。
+    - 在缺少稳定差异证据前，不建议仅依据当前均值差异决定工具替换。
+  alpha: 0.05
+  table_format: compact_letter_mean_table
+  figure_type: combined_raincloud
+  figure_style: color_manuscript_ready
+  figure_show_all_significant_brackets: true
+  word_fonts:
+    east_asian: SimSun
+    latin: Times New Roman
+  output_word_report: true
+human_review:
+  required_before_analysis: true
+  decision_file: scenarios/non_significant_case/human_review_decision.yaml

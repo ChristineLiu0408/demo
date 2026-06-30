@@ -1,0 +1,345 @@
+{
+  "grouping_variable": "knowledge_search_interface",
+  "group_order": [
+    "Standard_Search",
+    "Tagged_Knowledge_Base",
+    "Guided_Workflow",
+    "AI_Summary_Interface"
+  ],
+  "outcomes": {
+    "search_efficiency": {
+      "method": "classical_one_way_anova",
+      "posthoc_method": "tukey_hsd",
+      "descriptives": {
+        "Standard_Search": {
+          "n": 50,
+          "mean": 4.2,
+          "sd": 0.655955448960071
+        },
+        "Tagged_Knowledge_Base": {
+          "n": 50,
+          "mean": 4.22,
+          "sd": 0.6559554489600709
+        },
+        "Guided_Workflow": {
+          "n": 50,
+          "mean": 4.25,
+          "sd": 0.655955448960071
+        },
+        "AI_Summary_Interface": {
+          "n": 50,
+          "mean": 4.24,
+          "sd": 0.655955448960071
+        }
+      },
+      "omnibus": {
+        "stat_name": "F",
+        "df1": 3.0,
+        "df2": 196.0,
+        "statistic": 0.05713366471255495,
+        "p": 0.9820137075808246,
+        "effect_size_name": "eta_squared",
+        "effect_size": 0.0008737307949530674
+      },
+      "pairwise": [
+        {
+          "group_a": "AI_Summary_Interface",
+          "group_b": "Guided_Workflow",
+          "mean_a": 4.24,
+          "mean_b": 4.25,
+          "mean_diff": 0.01,
+          "se": null,
+          "ci_low": -0.3299,
+          "ci_high": 0.3499,
+          "p_adj": 0.9998,
+          "significant": false
+        },
+        {
+          "group_a": "AI_Summary_Interface",
+          "group_b": "Standard_Search",
+          "mean_a": 4.24,
+          "mean_b": 4.2,
+          "mean_diff": -0.04,
+          "se": null,
+          "ci_low": -0.3799,
+          "ci_high": 0.2999,
+          "p_adj": 0.9901,
+          "significant": false
+        },
+        {
+          "group_a": "AI_Summary_Interface",
+          "group_b": "Tagged_Knowledge_Base",
+          "mean_a": 4.24,
+          "mean_b": 4.22,
+          "mean_diff": -0.02,
+          "se": null,
+          "ci_low": -0.3599,
+          "ci_high": 0.3199,
+          "p_adj": 0.9987,
+          "significant": false
+        },
+        {
+          "group_a": "Guided_Workflow",
+          "group_b": "Standard_Search",
+          "mean_a": 4.25,
+          "mean_b": 4.2,
+          "mean_diff": -0.05,
+          "se": null,
+          "ci_low": -0.3899,
+          "ci_high": 0.2899,
+          "p_adj": 0.9811,
+          "significant": false
+        },
+        {
+          "group_a": "Guided_Workflow",
+          "group_b": "Tagged_Knowledge_Base",
+          "mean_a": 4.25,
+          "mean_b": 4.22,
+          "mean_diff": -0.03,
+          "se": null,
+          "ci_low": -0.3699,
+          "ci_high": 0.3099,
+          "p_adj": 0.9958,
+          "significant": false
+        },
+        {
+          "group_a": "Standard_Search",
+          "group_b": "Tagged_Knowledge_Base",
+          "mean_a": 4.2,
+          "mean_b": 4.22,
+          "mean_diff": 0.02,
+          "se": null,
+          "ci_low": -0.3199,
+          "ci_high": 0.3599,
+          "p_adj": 0.9987,
+          "significant": false
+        }
+      ],
+      "approved_analysis_path": "classical_anova",
+      "approved_posthoc_method": "tukey_hsd"
+    },
+    "decision_confidence": {
+      "method": "classical_one_way_anova",
+      "posthoc_method": "tukey_hsd",
+      "descriptives": {
+        "Standard_Search": {
+          "n": 50,
+          "mean": 4.099600000000001,
+          "sd": 0.7424668205326328
+        },
+        "Tagged_Knowledge_Base": {
+          "n": 50,
+          "mean": 4.1196,
+          "sd": 0.7424668205326328
+        },
+        "Guided_Workflow": {
+          "n": 50,
+          "mean": 4.1296,
+          "sd": 0.7424668205326328
+        },
+        "AI_Summary_Interface": {
+          "n": 50,
+          "mean": 4.1095999999999995,
+          "sd": 0.7424668205326327
+        }
+      },
+      "omnibus": {
+        "stat_name": "F",
+        "df1": 3.0,
+        "df2": 196.0,
+        "statistic": 0.015116966572481313,
+        "p": 0.9974569017642105,
+        "effect_size_name": "eta_squared",
+        "effect_size": 0.00023132861610496527
+      },
+      "pairwise": [
+        {
+          "group_a": "AI_Summary_Interface",
+          "group_b": "Guided_Workflow",
+          "mean_a": 4.1095999999999995,
+          "mean_b": 4.1296,
+          "mean_diff": 0.02,
+          "se": null,
+          "ci_low": -0.3648,
+          "ci_high": 0.4048,
+          "p_adj": 0.9991,
+          "significant": false
+        },
+        {
+          "group_a": "AI_Summary_Interface",
+          "group_b": "Standard_Search",
+          "mean_a": 4.1095999999999995,
+          "mean_b": 4.099600000000001,
+          "mean_diff": -0.01,
+          "se": null,
+          "ci_low": -0.3948,
+          "ci_high": 0.3748,
+          "p_adj": 0.9999,
+          "significant": false
+        },
+        {
+          "group_a": "AI_Summary_Interface",
+          "group_b": "Tagged_Knowledge_Base",
+          "mean_a": 4.1095999999999995,
+          "mean_b": 4.1196,
+          "mean_diff": 0.01,
+          "se": null,
+          "ci_low": -0.3748,
+          "ci_high": 0.3948,
+          "p_adj": 0.9999,
+          "significant": false
+        },
+        {
+          "group_a": "Guided_Workflow",
+          "group_b": "Standard_Search",
+          "mean_a": 4.1296,
+          "mean_b": 4.099600000000001,
+          "mean_diff": -0.03,
+          "se": null,
+          "ci_low": -0.4148,
+          "ci_high": 0.3548,
+          "p_adj": 0.9971,
+          "significant": false
+        },
+        {
+          "group_a": "Guided_Workflow",
+          "group_b": "Tagged_Knowledge_Base",
+          "mean_a": 4.1296,
+          "mean_b": 4.1196,
+          "mean_diff": -0.01,
+          "se": null,
+          "ci_low": -0.3948,
+          "ci_high": 0.3748,
+          "p_adj": 0.9999,
+          "significant": false
+        },
+        {
+          "group_a": "Standard_Search",
+          "group_b": "Tagged_Knowledge_Base",
+          "mean_a": 4.099600000000001,
+          "mean_b": 4.1196,
+          "mean_diff": 0.02,
+          "se": null,
+          "ci_low": -0.3648,
+          "ci_high": 0.4048,
+          "p_adj": 0.9991,
+          "significant": false
+        }
+      ],
+      "approved_analysis_path": "classical_anova",
+      "approved_posthoc_method": "tukey_hsd"
+    },
+    "perceived_effort": {
+      "method": "classical_one_way_anova",
+      "posthoc_method": "tukey_hsd",
+      "descriptives": {
+        "Standard_Search": {
+          "n": 50,
+          "mean": 4.499199999999999,
+          "sd": 0.75657347863339
+        },
+        "Tagged_Knowledge_Base": {
+          "n": 50,
+          "mean": 4.4692,
+          "sd": 0.75657347863339
+        },
+        "Guided_Workflow": {
+          "n": 50,
+          "mean": 4.4492,
+          "sd": 0.75657347863339
+        },
+        "AI_Summary_Interface": {
+          "n": 50,
+          "mean": 4.4592,
+          "sd": 0.75657347863339
+        }
+      },
+      "omnibus": {
+        "stat_name": "F",
+        "df1": 3.0,
+        "df2": 196.0,
+        "statistic": 0.04076379030705608,
+        "p": 0.9889984778141387,
+        "effect_size_name": "eta_squared",
+        "effect_size": 0.0006235465130778105
+      },
+      "pairwise": [
+        {
+          "group_a": "AI_Summary_Interface",
+          "group_b": "Guided_Workflow",
+          "mean_a": 4.4592,
+          "mean_b": 4.4492,
+          "mean_diff": -0.01,
+          "se": null,
+          "ci_low": -0.4021,
+          "ci_high": 0.3821,
+          "p_adj": 0.9999,
+          "significant": false
+        },
+        {
+          "group_a": "AI_Summary_Interface",
+          "group_b": "Standard_Search",
+          "mean_a": 4.4592,
+          "mean_b": 4.499199999999999,
+          "mean_diff": 0.04,
+          "se": null,
+          "ci_low": -0.3521,
+          "ci_high": 0.4321,
+          "p_adj": 0.9935,
+          "significant": false
+        },
+        {
+          "group_a": "AI_Summary_Interface",
+          "group_b": "Tagged_Knowledge_Base",
+          "mean_a": 4.4592,
+          "mean_b": 4.4692,
+          "mean_diff": 0.01,
+          "se": null,
+          "ci_low": -0.3821,
+          "ci_high": 0.4021,
+          "p_adj": 0.9999,
+          "significant": false
+        },
+        {
+          "group_a": "Guided_Workflow",
+          "group_b": "Standard_Search",
+          "mean_a": 4.4492,
+          "mean_b": 4.499199999999999,
+          "mean_diff": 0.05,
+          "se": null,
+          "ci_low": -0.3421,
+          "ci_high": 0.4421,
+          "p_adj": 0.9875,
+          "significant": false
+        },
+        {
+          "group_a": "Guided_Workflow",
+          "group_b": "Tagged_Knowledge_Base",
+          "mean_a": 4.4492,
+          "mean_b": 4.4692,
+          "mean_diff": 0.02,
+          "se": null,
+          "ci_low": -0.3721,
+          "ci_high": 0.4121,
+          "p_adj": 0.9992,
+          "significant": false
+        },
+        {
+          "group_a": "Standard_Search",
+          "group_b": "Tagged_Knowledge_Base",
+          "mean_a": 4.499199999999999,
+          "mean_b": 4.4692,
+          "mean_diff": -0.03,
+          "se": null,
+          "ci_low": -0.4221,
+          "ci_high": 0.3621,
+          "p_adj": 0.9972,
+          "significant": false
+        }
+      ],
+      "approved_analysis_path": "classical_anova",
+      "approved_posthoc_method": "tukey_hsd"
+    }
+  },
+  "alpha": 0.05
+}

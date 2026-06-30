@@ -1,0 +1,16 @@
+approval_status: approved
+reviewer_note: Synthetic evaluation case decision file. Not based on real participants,
+  companies, or research data.
+outcome_decisions:
+  search_efficiency:
+    approval_status: approved
+    approved_analysis_path: classical_anova
+    approved_posthoc_method: tukey_hsd
+  decision_confidence:
+    approval_status: approved
+    approved_analysis_path: classical_anova
+    approved_posthoc_method: tukey_hsd
+  perceived_effort:
+    approval_status: approved
+    approved_analysis_path: classical_anova
+    approved_posthoc_method: tukey_hsd

@@ -1,0 +1,63 @@
+project_name: ai-stat-report-workflow-demo
+dataset_path: data/employee_ai_support_mock.csv
+
+analysis:
+  analysis_type: one_way_anova
+  grouping_variable: ai_support_condition
+  grouping_variable_label_zh: AI辅助条件
+  condition_order:
+    - No_AI_Support
+    - Basic_Chatbot
+    - Workflow_Assistant
+    - Agentic_Assistant
+  condition_labels_zh:
+    No_AI_Support: 无AI辅助
+    Basic_Chatbot: 对话AI辅助
+    Workflow_Assistant: 工作流AI辅助
+    Agentic_Assistant: 智能体AI辅助
+  outcome_variables:
+    - task_efficiency
+    - work_confidence
+    - perceived_workload
+  outcome_labels_zh:
+    task_efficiency: 任务效率
+    work_confidence: 工作信心
+    perceived_workload: 感知工作负荷
+  outcome_directions:
+    task_efficiency: positive
+    work_confidence: positive
+    perceived_workload: negative
+
+reporting:
+  analysis_title: AI辅助试点方案的效果评估报告
+  decision_context: AI工具试点方案评估与后续工作流优化
+  baseline_condition: No_AI_Support
+  focal_condition: Agentic_Assistant
+  report_context:
+    scenario_label: AI辅助工具试点
+    participant_label: 员工
+    figure_title: 图 1. 不同AI辅助工具的效果
+    overview_sentence: 本次AI辅助工具试点随机试验和对比了四组员工的{outcome_list}，以评估当前AI辅助工具试点方案的效果，并为后续的工作流优化提供建议。具体而言，随机分配员工到4种不同程度的AI辅助条件，各条件50人，包括{group_labels}。
+    questions:
+      - AI辅助是否能提升员工的任务效率、工作信心，并降低员工的工作负荷？
+      - 何种类型的AI辅助最有效，AI辅助的程度是越深越好吗？
+    core_findings:
+      - 第一，所有的AI辅助均有效。三种AI辅助都能提升员工的任务效率、工作信心，降低员工的工作负荷感。
+      - 第二，AI辅助程度越深，效果越好。随着AI辅助的深度提高，也就是从{group_2}升级到{group_3}再升级到{group_4}，员工的任务效率和工作信心的提升越高，工作负荷感降低得越低。
+    implication_sentence: 上述结果说明，AI辅助的程度越高，越能解放员工，提升组织效率。示例图见图1。
+    action_recommendations:
+      - 未来企业可以继续推广AI辅助工具。尽管智能体AI的效果最优秀，但是各部门需要结合成本、员工接受度和业务目标选择最合适的AI辅助工具。
+      - 未来AI应用团队可以进一步了解员工的真实使用体验，并考察不同AI辅助工具的任务耗时、完成质量、用户反馈、使用频率和实施成本，继续积累推广经验。
+  alpha: 0.05
+  table_format: compact_letter_mean_table
+  figure_type: combined_raincloud
+  figure_style: color_manuscript_ready
+  figure_show_all_significant_brackets: true
+  word_fonts:
+    east_asian: SimSun
+    latin: Times New Roman
+  output_word_report: true
+
+human_review:
+  required_before_analysis: true
+  decision_file: config/human_review_decision.yaml

@@ -1,0 +1,35 @@
+approval_status: pending
+reviewer_note: "Review outputs/anova_suitability_check.md before approving the analysis path."
+
+outcome_decisions:
+  task_efficiency:
+    approval_status: pending
+    approved_analysis_path: null
+    approved_posthoc_method: null
+  work_confidence:
+    approval_status: pending
+    approved_analysis_path: null
+    approved_posthoc_method: null
+  perceived_workload:
+    approval_status: pending
+    approved_analysis_path: null
+    approved_posthoc_method: null
+
+# Example after review:
+# approval_status: approved
+# outcome_decisions:
+#   task_efficiency:
+#     approval_status: approved
+#     approved_analysis_path: classical_anova
+#     approved_posthoc_method: tukey_hsd
+#   work_confidence:
+#     approval_status: approved
+#     approved_analysis_path: classical_anova
+#     approved_posthoc_method: tukey_hsd
+#   perceived_workload:
+#     approval_status: approved
+#     approved_analysis_path: classical_anova
+#     approved_posthoc_method: tukey_hsd
+#
+# Use approved_analysis_path: welch_anova and approved_posthoc_method: games_howell
+# for outcomes where the suitability check recommends Welch ANOVA.

@@ -1,0 +1,61 @@
+project_name: ai-stat-report-workflow-demo
+dataset_path: scenarios/diagnostic_only_case/data.csv
+analysis:
+  analysis_type: one_way_anova
+  grouping_variable: training_format
+  grouping_variable_label_zh: 培训方案
+  condition_order:
+  - Self_Study
+  - Live_Workshop
+  - Blended_Coaching
+  - AI_Tutor
+  condition_labels_zh:
+    Self_Study: 自学材料
+    Live_Workshop: 直播培训
+    Blended_Coaching: 混合辅导
+    AI_Tutor: AI导师辅助
+  outcome_variables:
+  - knowledge_mastery
+  - transfer_confidence
+  - training_fatigue
+  outcome_labels_zh:
+    knowledge_mastery: 知识掌握
+    transfer_confidence: 迁移信心
+    training_fatigue: 培训疲劳
+  outcome_directions:
+    knowledge_mastery: positive
+    transfer_confidence: positive
+    training_fatigue: negative
+reporting:
+  analysis_title: 培训方案效果评估数据诊断报告
+  decision_context: 不同培训方案是否影响员工知识掌握、迁移信心和培训疲劳；但当前数据质量是否足以支持正式结论
+  baseline_condition: Self_Study
+  focal_condition: AI_Tutor
+  report_context:
+    scenario_label: 培训方案高风险数据检查
+    participant_label: 员工
+    figure_title: 图 1. 不同培训方案的效果
+    overview_sentence: 本次评估比较了{group_labels}在{outcome_list}上的差异，以支持{decision_context}。该情景故意使用高风险
+      synthetic/mock data，用于检验 workflow 是否会阻止正式统计结论。
+    questions:
+    - 当前数据质量是否足以支持培训方案效果结论？
+    - 当样本量和数据质量风险较高时，workflow 是否会停止正式报告生成？
+    core_findings:
+    - 第一，当前数据只适合进行诊断，不适合自动生成正式业务结论。
+    - 第二，后续应优先修复样本量、缺失值或异常值问题，再重新进入正式分析。
+    implication_sentence: 该情景用于展示 workflow 的风险拦截能力。
+    action_recommendations:
+    - 在正式评估培训方案前，应补足有效样本并核查异常观测来源。
+    - 如果数据结构确认无误，再重新运行 suitability check 并由人工确认分析路径。
+  alpha: 0.05
+  table_format: compact_letter_mean_table
+  figure_type: combined_raincloud
+  figure_style: color_manuscript_ready
+  figure_show_all_significant_brackets: true
+  word_fonts:
+    east_asian: SimSun
+    latin: Times New Roman
+  output_word_report: true
+human_review:
+  required_before_analysis: true
+  decision_file: scenarios/diagnostic_only_case/human_review_decision.yaml

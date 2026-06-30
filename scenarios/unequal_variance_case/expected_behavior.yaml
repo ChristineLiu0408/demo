@@ -1,0 +1,5 @@
+case_id: unequal_variance_case
+expected_decision: welch_anova_recommended
+expected_report: complete
+synthetic_data_only: true
+business_scenario: 客服团队使用不同辅助工具时，处理效率、服务信心和认知负荷是否不同。

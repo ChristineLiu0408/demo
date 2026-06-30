@@ -1,0 +1,16 @@
+approval_status: approved
+reviewer_note: Synthetic evaluation case decision file. Not based on real participants,
+  companies, or research data.
+outcome_decisions:
+  resolution_efficiency:
+    approval_status: approved
+    approved_analysis_path: welch_anova
+    approved_posthoc_method: games_howell
+  service_confidence:
+    approval_status: approved
+    approved_analysis_path: welch_anova
+    approved_posthoc_method: games_howell
+  cognitive_load:
+    approval_status: approved
+    approved_analysis_path: welch_anova
+    approved_posthoc_method: games_howell

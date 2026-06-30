@@ -1,0 +1,5 @@
+case_id: clean_anova_case
+expected_decision: classical_anova_recommended
+expected_report: complete
+synthetic_data_only: true
+business_scenario: 不同入职培训形式是否会影响新员工的学习效果、上手信心和培训负担感。

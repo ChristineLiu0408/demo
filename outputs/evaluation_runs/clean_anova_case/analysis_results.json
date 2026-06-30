@@ -1,0 +1,345 @@
+{
+  "grouping_variable": "onboarding_training_format",
+  "group_order": [
+    "Reading_Materials",
+    "Recorded_Video",
+    "Live_Workshop",
+    "Mentor_Guided"
+  ],
+  "outcomes": {
+    "learning_effectiveness": {
+      "method": "classical_one_way_anova",
+      "posthoc_method": "tukey_hsd",
+      "descriptives": {
+        "Reading_Materials": {
+          "n": 50,
+          "mean": 3.761399999999999,
+          "sd": 0.6353113008436037
+        },
+        "Recorded_Video": {
+          "n": 50,
+          "mean": 4.1658,
+          "sd": 0.6569319226681013
+        },
+        "Live_Workshop": {
+          "n": 50,
+          "mean": 4.6756,
+          "sd": 0.6980063738671616
+        },
+        "Mentor_Guided": {
+          "n": 50,
+          "mean": 4.9332,
+          "sd": 0.6180167093705676
+        }
+      },
+      "omnibus": {
+        "stat_name": "F",
+        "df1": 3.0,
+        "df2": 196.0,
+        "statistic": 32.149077491835705,
+        "p": 6.048881130164563e-17,
+        "effect_size_name": "eta_squared",
+        "effect_size": 0.3297936234824336
+      },
+      "pairwise": [
+        {
+          "group_a": "Live_Workshop",
+          "group_b": "Mentor_Guided",
+          "mean_a": 4.6756,
+          "mean_b": 4.9332,
+          "mean_diff": 0.2576,
+          "se": null,
+          "ci_low": -0.0807,
+          "ci_high": 0.5959,
+          "p_adj": 0.2017,
+          "significant": false
+        },
+        {
+          "group_a": "Live_Workshop",
+          "group_b": "Reading_Materials",
+          "mean_a": 4.6756,
+          "mean_b": 3.761399999999999,
+          "mean_diff": -0.9142,
+          "se": null,
+          "ci_low": -1.2525,
+          "ci_high": -0.5759,
+          "p_adj": 0.0,
+          "significant": true
+        },
+        {
+          "group_a": "Live_Workshop",
+          "group_b": "Recorded_Video",
+          "mean_a": 4.6756,
+          "mean_b": 4.1658,
+          "mean_diff": -0.5098,
+          "se": null,
+          "ci_low": -0.8481,
+          "ci_high": -0.1715,
+          "p_adj": 0.0007,
+          "significant": true
+        },
+        {
+          "group_a": "Mentor_Guided",
+          "group_b": "Reading_Materials",
+          "mean_a": 4.9332,
+          "mean_b": 3.761399999999999,
+          "mean_diff": -1.1718,
+          "se": null,
+          "ci_low": -1.5101,
+          "ci_high": -0.8335,
+          "p_adj": 0.0,
+          "significant": true
+        },
+        {
+          "group_a": "Mentor_Guided",
+          "group_b": "Recorded_Video",
+          "mean_a": 4.9332,
+          "mean_b": 4.1658,
+          "mean_diff": -0.7674,
+          "se": null,
+          "ci_low": -1.1057,
+          "ci_high": -0.4291,
+          "p_adj": 0.0,
+          "significant": true
+        },
+        {
+          "group_a": "Reading_Materials",
+          "group_b": "Recorded_Video",
+          "mean_a": 3.761399999999999,
+          "mean_b": 4.1658,
+          "mean_diff": 0.4044,
+          "se": null,
+          "ci_low": 0.0661,
+          "ci_high": 0.7427,
+          "p_adj": 0.0119,
+          "significant": true
+        }
+      ],
+      "approved_analysis_path": "classical_anova",
+      "approved_posthoc_method": "tukey_hsd"
+    },
+    "onboarding_confidence": {
+      "method": "classical_one_way_anova",
+      "posthoc_method": "tukey_hsd",
+      "descriptives": {
+        "Reading_Materials": {
+          "n": 50,
+          "mean": 3.7512,
+          "sd": 0.6648266307689485
+        },
+        "Recorded_Video": {
+          "n": 50,
+          "mean": 4.029,
+          "sd": 0.6494935232430681
+        },
+        "Live_Workshop": {
+          "n": 50,
+          "mean": 4.4677999999999995,
+          "sd": 0.6913851521195901
+        },
+        "Mentor_Guided": {
+          "n": 50,
+          "mean": 5.1322,
+          "sd": 0.6977318647604114
+        }
+      },
+      "omnibus": {
+        "stat_name": "F",
+        "df1": 3.0,
+        "df2": 196.0,
+        "statistic": 39.63581838516557,
+        "p": 4.581162365111805e-20,
+        "effect_size_name": "eta_squared",
+        "effect_size": 0.3775949194241271
+      },
+      "pairwise": [
+        {
+          "group_a": "Live_Workshop",
+          "group_b": "Mentor_Guided",
+          "mean_a": 4.4677999999999995,
+          "mean_b": 5.1322,
+          "mean_diff": 0.6644,
+          "se": null,
+          "ci_low": 0.314,
+          "ci_high": 1.0148,
+          "p_adj": 0.0,
+          "significant": true
+        },
+        {
+          "group_a": "Live_Workshop",
+          "group_b": "Reading_Materials",
+          "mean_a": 4.4677999999999995,
+          "mean_b": 3.7512,
+          "mean_diff": -0.7166,
+          "se": null,
+          "ci_low": -1.067,
+          "ci_high": -0.3662,
+          "p_adj": 0.0,
+          "significant": true
+        },
+        {
+          "group_a": "Live_Workshop",
+          "group_b": "Recorded_Video",
+          "mean_a": 4.4677999999999995,
+          "mean_b": 4.029,
+          "mean_diff": -0.4388,
+          "se": null,
+          "ci_low": -0.7892,
+          "ci_high": -0.0884,
+          "p_adj": 0.0075,
+          "significant": true
+        },
+        {
+          "group_a": "Mentor_Guided",
+          "group_b": "Reading_Materials",
+          "mean_a": 5.1322,
+          "mean_b": 3.7512,
+          "mean_diff": -1.381,
+          "se": null,
+          "ci_low": -1.7314,
+          "ci_high": -1.0306,
+          "p_adj": 0.0,
+          "significant": true
+        },
+        {
+          "group_a": "Mentor_Guided",
+          "group_b": "Recorded_Video",
+          "mean_a": 5.1322,
+          "mean_b": 4.029,
+          "mean_diff": -1.1032,
+          "se": null,
+          "ci_low": -1.4536,
+          "ci_high": -0.7528,
+          "p_adj": 0.0,
+          "significant": true
+        },
+        {
+          "group_a": "Reading_Materials",
+          "group_b": "Recorded_Video",
+          "mean_a": 3.7512,
+          "mean_b": 4.029,
+          "mean_diff": 0.2778,
+          "se": null,
+          "ci_low": -0.0726,
+          "ci_high": 0.6282,
+          "p_adj": 0.172,
+          "significant": false
+        }
+      ],
+      "approved_analysis_path": "classical_anova",
+      "approved_posthoc_method": "tukey_hsd"
+    },
+    "training_burden": {
+      "method": "classical_one_way_anova",
+      "posthoc_method": "tukey_hsd",
+      "descriptives": {
+        "Reading_Materials": {
+          "n": 50,
+          "mean": 5.154,
+          "sd": 0.7422772461850636
+        },
+        "Recorded_Video": {
+          "n": 50,
+          "mean": 4.7388,
+          "sd": 0.6444508499173414
+        },
+        "Live_Workshop": {
+          "n": 50,
+          "mean": 4.4436,
+          "sd": 0.6422878749328172
+        },
+        "Mentor_Guided": {
+          "n": 50,
+          "mean": 3.8393999999999995,
+          "sd": 0.7028380078696104
+        }
+      },
+      "omnibus": {
+        "stat_name": "F",
+        "df1": 3.0,
+        "df2": 196.0,
+        "statistic": 32.62796291787695,
+        "p": 3.7600051595144334e-17,
+        "effect_size_name": "eta_squared",
+        "effect_size": 0.3330699385010827
+      },
+      "pairwise": [
+        {
+          "group_a": "Live_Workshop",
+          "group_b": "Mentor_Guided",
+          "mean_a": 4.4436,
+          "mean_b": 3.8393999999999995,
+          "mean_diff": -0.6042,
+          "se": null,
+          "ci_low": -0.9588,
+          "ci_high": -0.2496,
+          "p_adj": 0.0001,
+          "significant": true
+        },
+        {
+          "group_a": "Live_Workshop",
+          "group_b": "Reading_Materials",
+          "mean_a": 4.4436,
+          "mean_b": 5.154,
+          "mean_diff": 0.7104,
+          "se": null,
+          "ci_low": 0.3558,
+          "ci_high": 1.065,
+          "p_adj": 0.0,
+          "significant": true
+        },
+        {
+          "group_a": "Live_Workshop",
+          "group_b": "Recorded_Video",
+          "mean_a": 4.4436,
+          "mean_b": 4.7388,
+          "mean_diff": 0.2952,
+          "se": null,
+          "ci_low": -0.0594,
+          "ci_high": 0.6498,
+          "p_adj": 0.1391,
+          "significant": false
+        },
+        {
+          "group_a": "Mentor_Guided",
+          "group_b": "Reading_Materials",
+          "mean_a": 3.8393999999999995,
+          "mean_b": 5.154,
+          "mean_diff": 1.3146,
+          "se": null,
+          "ci_low": 0.96,
+          "ci_high": 1.6692,
+          "p_adj": 0.0,
+          "significant": true
+        },
+        {
+          "group_a": "Mentor_Guided",
+          "group_b": "Recorded_Video",
+          "mean_a": 3.8393999999999995,
+          "mean_b": 4.7388,
+          "mean_diff": 0.8994,
+          "se": null,
+          "ci_low": 0.5448,
+          "ci_high": 1.254,
+          "p_adj": 0.0,
+          "significant": true
+        },
+        {
+          "group_a": "Reading_Materials",
+          "group_b": "Recorded_Video",
+          "mean_a": 5.154,
+          "mean_b": 4.7388,
+          "mean_diff": -0.4152,
+          "se": null,
+          "ci_low": -0.7698,
+          "ci_high": -0.0606,
+          "p_adj": 0.0145,
+          "significant": true
+        }
+      ],
+      "approved_analysis_path": "classical_anova",
+      "approved_posthoc_method": "tukey_hsd"
+    }
+  },
+  "alpha": 0.05
+}

@@ -1,0 +1,61 @@
+project_name: ai-stat-report-workflow-demo
+dataset_path: scenarios/unequal_variance_case/data.csv
+analysis:
+  analysis_type: one_way_anova
+  grouping_variable: service_support_tool
+  grouping_variable_label_zh: 客服辅助工具
+  condition_order:
+  - No_Tool
+  - Knowledge_Base
+  - Chatbot_Copilot
+  - Agent_Copilot
+  condition_labels_zh:
+    No_Tool: 无辅助工具
+    Knowledge_Base: 知识库辅助
+    Chatbot_Copilot: 对话助手辅助
+    Agent_Copilot: 智能体助手辅助
+  outcome_variables:
+  - resolution_efficiency
+  - service_confidence
+  - cognitive_load
+  outcome_labels_zh:
+    resolution_efficiency: 处理效率
+    service_confidence: 服务信心
+    cognitive_load: 认知负荷
+  outcome_directions:
+    resolution_efficiency: positive
+    service_confidence: positive
+    cognitive_load: negative
+reporting:
+  analysis_title: 客服辅助工具试点效果评估报告
+  decision_context: 客服团队使用不同辅助工具时，处理效率、服务信心和认知负荷是否不同
+  baseline_condition: No_Tool
+  focal_condition: Agent_Copilot
+  report_context:
+    scenario_label: 客服辅助工具试点
+    participant_label: 客服人员
+    figure_title: 图 1. 不同客服辅助工具的效果
+    overview_sentence: 本次评估比较了{group_labels}在{outcome_list}上的差异，以支持{decision_context}。该情景用于检验
+      workflow 是否能在方差齐性不满足时切换统计路径。
+    questions:
+    - 不同客服辅助工具是否影响处理效率、服务信心和认知负荷？
+    - 当组间方差不齐时，workflow 是否会切换到更合适的 Welch ANOVA 路径？
+    core_findings:
+    - 第一，客服辅助工具与多个服务表现指标相关。
+    - 第二，由于组间方差不齐，本轮分析采用 Welch ANOVA 和 Games-Howell 事后比较，而不是普通单因素方差分析。
+    implication_sentence: 这些结果展示了 workflow 在方法选择上的 guardrail 价值。示例图见图1。
+    action_recommendations:
+    - 后续评估客服工具时，应同时关注均值改善和不同工具带来的结果波动。
+    - 如果某类工具效果波动较大，建议进一步拆分使用人群、问题类型和培训熟练度。
+  alpha: 0.05
+  table_format: compact_letter_mean_table
+  figure_type: combined_raincloud
+  figure_style: color_manuscript_ready
+  figure_show_all_significant_brackets: true
+  word_fonts:
+    east_asian: SimSun
+    latin: Times New Roman
+  output_word_report: true
+human_review:
+  required_before_analysis: true
+  decision_file: scenarios/unequal_variance_case/human_review_decision.yaml

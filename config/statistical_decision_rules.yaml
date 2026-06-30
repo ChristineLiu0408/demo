@@ -1,0 +1,112 @@
+scope:
+  supported_analysis_type: one_way_anova
+  design: between_subjects
+  supported_grouping_variables: categorical
+  supported_outcome_variables: numeric_continuous
+  expected_groups:
+    - No_AI_Support
+    - Basic_Chatbot
+    - Workflow_Assistant
+    - Agentic_Assistant
+
+decisions:
+  classical_anova_recommended:
+    description: "Use ordinary/classical one-way ANOVA followed by Tukey HSD."
+    required_conditions:
+      - data_structure_valid
+      - dependent_variables_numeric
+      - missingness_acceptable
+      - group_sample_size_acceptable
+      - no_severe_outlier_pattern
+      - no_severe_small_sample_nonnormality
+      - variance_homogeneity_acceptable
+    analysis_method: classical_one_way_anova
+    posthoc_method: tukey_hsd
+
+  welch_anova_recommended:
+    description: "Use Welch ANOVA followed by Games-Howell post hoc tests."
+    required_conditions:
+      - data_structure_valid
+      - dependent_variables_numeric
+      - missingness_acceptable
+      - group_sample_size_acceptable
+      - no_severe_outlier_pattern
+      - no_severe_small_sample_nonnormality
+      - variance_homogeneity_not_met_or_uncertain
+    analysis_method: welch_anova
+    posthoc_method: games_howell
+
+  diagnostic_only:
+    description: "Report diagnostics and reviewer guidance only; do not generate formal statistical conclusions."
+    triggers:
+      - severe_missingness
+      - group_n_less_than_10
+      - sample_size_ratio_greater_than_4
+      - outlier_rate_greater_than_5_percent
+      - outliers_concentrated_in_one_group
+      - severe_small_sample_nonnormality
+      - extreme_variance_heterogeneity_with_additional_risk
+
+  stop_analysis:
+    description: "Stop the workflow because the analysis plan or data structure is not suitable for the one-way ANOVA MVP."
+    triggers:
+      - missing_grouping_variable
+      - fewer_than_2_groups
+      - missing_dependent_variable
+      - nonnumeric_dependent_variable
+      - duplicated_participant_id_across_groups
+      - repeated_measures_or_nested_structure_detected
+      - empty_group_or_group_n_less_than_5
+
+thresholds:
+  missingness:
+    pass_max_rate: 0.05
+    warning_max_rate: 0.20
+    diagnostic_rate: 0.20
+    group_diagnostic_rate: 0.30
+    handling: "No automatic imputation. Diagnostics use available cases by dependent variable."
+
+  group_sample_size:
+    pass_min_n: 20
+    warning_min_n: 10
+    diagnostic_min_n: 5
+    stop_below_n: 5
+
+  sample_size_balance:
+    pass_max_ratio: 2
+    warning_max_ratio: 4
+    diagnostic_ratio: 4
+
+  outliers:
+    method: iqr_rule
+    iqr_multiplier: 1.5
+    pass_max_rate: 0.02
+    warning_max_rate: 0.05
+    diagnostic_rate: 0.05
+    concentrated_group_rate: 0.10
+    concentrated_share_of_all_outliers: 0.60
+    handling: "No automatic deletion. Outliers are flagged for human review."
+
+  normality:
+    test: shapiro_wilk
+    alpha: 0.05
+    severe_skew_abs: 2
+    severe_kurtosis_abs: 7
+    warning_skew_abs: 1
+    warning_kurtosis_abs: 3
+    small_sample_n: 20
+    note: "Shapiro-Wilk p < .05 is not treated as automatic failure."
+
+  variance_homogeneity:
+    test: levene_median_centered
+    alpha: 0.05
+    acceptable_max_variance_ratio: 2
+    strong_warning_alpha: 0.01
+    strong_warning_variance_ratio: 4
+    ordinary_path: "classical_anova_recommended"
+    robust_path: "welch_anova_recommended"
+
+human_review:
+  required_after_suitability_check: true
+  block_formal_outputs_before_approval: true
+  approval_file: config/human_review_decision.yaml
